@@ -1,0 +1,22 @@
+One solution to avoid problems with `calc()` and mixed units is to use only one type of unit within `calc()`, converting other values as needed.  Another strategy, if working with percentages is crucial, involves setting a container size first to ensure reliable calculations. For instance, you can set the parent container to a fixed width or use viewport units (vw, vh) for a more flexible approach.
+
+Here's an example using fixed width parent:
+
+```css
+.container {
+  width: 500px; /* Fixed width container */
+}
+
+.element {
+  width: calc(50% - 10px);
+}
+```
+
+Here's an example using viewport units:
+
+```css
+.element {
+  width: calc(50vw - 10px);
+}
+```
+These approaches provide more predictable and consistent rendering across different browsers.
